@@ -23,6 +23,7 @@
   --pumpkin: #ff8a2b;
   --ghost: #8fe3d0;
   --veil: rgba(14, 10, 22, 0.94);
+  --plate: #fbf8f2;
   --display: "Pirata One", "UnifrakturCook", Georgia, serif;
   --body: "Alegreya Sans", "Segoe UI", system-ui, sans-serif;
   color-scheme: dark;
@@ -58,7 +59,18 @@ button { cursor: pointer; }
   align-items: stretch;
   gap: 18px;
 }
-.title { text-align: center; align-self: center; padding-inline: 8px; }
+.title { text-align: center; align-self: center; padding-inline: 8px; display: grid; justify-items: center; gap: 12px; }
+.title p { margin: 0 !important; }
+.brand {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--plate);
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px var(--edge), 0 10px 24px -14px #000;
+  line-height: 0;
+}
+.brand img { display: block; height: 58px; width: auto; max-width: 100%; }
+.results .brand img { height: 72px; }
 .title h1 {
   margin: 0;
   font-family: var(--display);
@@ -381,6 +393,7 @@ button { cursor: pointer; }
     </section>
 
     <div class="title">
+      <span class="brand"><img src="assets/enjoy-english-logo.png" alt="Enjoy English" width="557" height="299"></span>
       <h1>Halloween Jeopardy</h1>
       <p>Halloween Quiz · 16 questions · 3,700 points</p>
     </div>
@@ -439,6 +452,7 @@ button { cursor: pointer; }
 <!-- Results -->
 <div class="overlay" id="rview" hidden role="dialog" aria-modal="true" aria-labelledby="rtitle">
   <article class="card results">
+    <span class="brand"><img src="assets/enjoy-english-logo.png" alt="Enjoy English" width="557" height="299"></span>
     <div class="eyebrow">Final scores</div>
     <h2 id="rtitle"></h2>
     <div class="final" id="rfinal"></div>
